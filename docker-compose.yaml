@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  s1:
+    build: ./s1
+    image: ahsansabir30/s1
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+    depends_on:
+    - "s2"
+    - "s3"
+    - "s4"
+  s2:
+    build: ./s2
+    image: ahsansabir30/s2
+    ports:
+    - target: 5001
+      published: 5001
+      protocol: tcp
+  s3:
+    build: ./s3
+    image: ahsansabir30/s3
+    ports:
+    - target: 5002
+      published: 5002
+      protocol: tcp
+  s4:
+    build: ./s4
+    image: ahsansabir30/s4
+    ports:
+    - target: 5003
+      published: 5003
