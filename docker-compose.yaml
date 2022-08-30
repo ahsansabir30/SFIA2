@@ -3,6 +3,8 @@ services:
   s1:
     build: ./s1
     image: ahsansabir30/s1
+    deploy:
+      replicas: 4
     ports:
     - target: 5000
       published: 5000
@@ -14,6 +16,8 @@ services:
   s2:
     build: ./s2
     image: ahsansabir30/s2
+    deploy:
+      replicas: 4
     ports:
     - target: 5001
       published: 5001
@@ -21,6 +25,8 @@ services:
   s3:
     build: ./s3
     image: ahsansabir30/s3
+    deploy:
+      replicas: 4
     ports:
     - target: 5002
       published: 5002
@@ -28,6 +34,8 @@ services:
   s4:
     build: ./s4
     image: ahsansabir30/s4
+    deploy:
+      replicas: 4
     ports:
     - target: 5003
       published: 5003
