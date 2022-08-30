@@ -1,7 +1,16 @@
 {% extends "layout.html" %}
 {% block content %}
+{% if outcome == 'True' %}
 <div class="p-5 text-uppercase">
+    <h1 class="p-3">YOU SCORED</h1>
     <h2>Team: {{team}}</h2>
     <h2>Stadium: {{stadium}}</h2>
 </div>
+{% else %}
+<div class="p-5 text-uppercase">
+    <h1 class="p-3">YOU MISSED</h1>
+    <h2>Team: {{team}}</h2>
+    <h2>Stadium: {{stadium}}</h2>
+</div>
+{% endif %}
 {% endblock %}

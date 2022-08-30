@@ -10,5 +10,5 @@ def football():
         'team': team,
         'stadium': stadium
     }
-    # outcome = requests.post('http://localhost:5003/outcome', json=response).text
-    return render_template('generator.html', team=team, stadium=stadium)
+    outcome = requests.post('http://localhost:5003/outcome', json=response).text
+    return render_template('generator.html', team=team, stadium=stadium, outcome=outcome)
