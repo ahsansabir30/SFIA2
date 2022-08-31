@@ -2,4 +2,4 @@
 - name: "cloning repo"
   git: 
     repo: "https://github.com/ahsansabir30/SFIA2"
-    dest: "/home/jenkins/"
+    dest: "/home/jenkins/project"
