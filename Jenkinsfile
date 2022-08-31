@@ -1,9 +1,15 @@
 pipeline {
     agent any
     stages{
-        stage('Pipeline Test'){
+        stage('Setup Jenkins VM'){
             steps{
-                sh 'echo Hello World'
+                sh 'sudo apt install python3 python3-pip python3-venv -y'
+            }
+        }
+        stage('Run Test for API'){
+            steps{
+                sh 'sudo chmod +x ./test-script.sh'
+                sh './test-script.sh'
             }
         }
     }
