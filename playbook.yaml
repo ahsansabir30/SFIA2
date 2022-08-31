@@ -1,0 +1,22 @@
+---
+- hosts: manager-group worker-group
+  become: true
+  roles:
+  - initialinstalls
+  - dockerinstalls
+
+- hosts: manager-group
+  become: true
+  roles:
+  - swarm-init
+
+- hosts: worker-group
+  become: true
+  roles:
+  - swarmjoin
+
+- hosts: manager-group
+  become: true
+  roles:
+  - clone-repo
+  - swarm-stack
