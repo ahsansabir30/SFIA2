@@ -21,7 +21,7 @@
   - clone-repo
   - swarm-stack
 
-- host: load_balancer
+- hosts: load_balancer
   become: true
   roles:
   - load-balancer
