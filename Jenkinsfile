@@ -12,5 +12,10 @@ pipeline {
                 sh './test-script.sh'
             }
         }
+        stage('Docker Swarm and NGINX Load Balancer'){
+            steps{
+                sh ''
+            }
+        }
     }
 }

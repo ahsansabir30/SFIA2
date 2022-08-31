@@ -6,6 +6,8 @@ else
     cd SFIA2
 fi
 
+cd project
+
 cd s1
 python3 -m venv venv
 source venv/bin/activate
