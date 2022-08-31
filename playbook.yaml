@@ -1,21 +1,21 @@
 ---
-- hosts: manager-group worker-group
+- hosts: manager_group worker_group
   become: true
   roles:
   - initial-setup
   - docker-install
 
-- hosts: manager-group
+- hosts: manager_group
   become: true
   roles:
   - swarm-init
 
-- hosts: worker-group
+- hosts: worker_group
   become: true
   roles:
   - swarm-join
 
-- hosts: manager-group
+- hosts: manager_group
   become: true
   roles:
   - clone-repo
