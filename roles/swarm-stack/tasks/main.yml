@@ -10,4 +10,4 @@
     state: present
     name: mystack
     compose:
-    - /home/jenkins/project/SFIA2/docker-compose.yaml
+    - /home/jenkins/project/docker-compose.yaml

@@ -3,3 +3,5 @@
   git: 
     repo: "https://github.com/ahsansabir30/SFIA2"
     dest: "/home/jenkins/project"
+    single_branch: yes
+    version: ansible
