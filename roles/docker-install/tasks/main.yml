@@ -33,3 +33,9 @@
     name:
       - docker
       - jsondiff
+
+- name: "adding jenkins to docker group"
+  user:
+    name: jenkins
+    groups: docker
+    append: yes
