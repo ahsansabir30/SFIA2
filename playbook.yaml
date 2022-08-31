@@ -2,8 +2,8 @@
 - hosts: manager-group worker-group
   become: true
   roles:
-  - initialinstalls
-  - dockerinstalls
+  - initial-setup
+  - docker-install
 
 - hosts: manager-group
   become: true
@@ -13,7 +13,7 @@
 - hosts: worker-group
   become: true
   roles:
-  - swarmjoin
+  - swarm-join
 
 - hosts: manager-group
   become: true
