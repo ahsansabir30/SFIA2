@@ -7,8 +7,8 @@
 
 - name: "Start NGINX Service"
   service:
-    name: nginx
-    state: started
+      name: nginx
+      state: started
 
 - name: "Add NGINX conf"
   template:
