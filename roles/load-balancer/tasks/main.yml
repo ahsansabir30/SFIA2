@@ -1,0 +1,16 @@
+---
+- name: "Install NGINX"
+    apt:
+      name: nginx
+      state: latest
+      update_cache: true
+  - name: "Start NGINX Service"
+    service:
+      name: nginx
+      state: started
+  - name: "Add NGINX conf"
+    template:
+      src: /home/jenkins/app/nginx/nginx.conf
+      dest: /etc/nginx/nginx.conf
+    notify: "Restart NGINX"
+
