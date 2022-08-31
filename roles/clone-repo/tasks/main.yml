@@ -1,2 +1,5 @@
 ---
-# tasks file for clone-repo
+- name: "cloning repo"
+  git: 
+    repo: "https://github.com/ahsansabir30/SFIA2"
+    dest: "/home/jenkins/"

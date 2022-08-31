@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Docker Swarm and NGINX Load Balancer'){
             steps{
-                sh ''
+                sh 'ansible-playbook -i inventory.yaml playbook.yaml'
             }
         }
     }
