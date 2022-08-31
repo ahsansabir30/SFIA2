@@ -12,7 +12,7 @@
 
 - name: "Add NGINX conf"
   template:
-    src: /home/jenkins/app/nginx/nginx.conf
+    src: nginx.conf
     dest: /etc/nginx/nginx.conf
   notify: "Restart NGINX"
 
