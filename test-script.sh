@@ -1,8 +1,8 @@
 #!/bin/bash
 if [ -d SFIA2 ]; then
-    cd SFIA2 && git pull origin dev
+    cd SFIA2 && git pull origin ansible
 else
-    git clone --single-branch --branch dev https://github.com/ahsansabir30/SFIA2.git SFIA2
+    git clone --single-branch --branch ansible https://github.com/ahsansabir30/SFIA2.git SFIA2
     cd SFIA2
 fi
 
