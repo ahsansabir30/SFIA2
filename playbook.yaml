@@ -20,3 +20,8 @@
   roles:
   - clone-repo
   - swarm-stack
+
+- host: load_balancer
+  become: true
+  roles:
+  - load-balancer
