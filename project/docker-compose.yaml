@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   s1:
+    container_name: s1
     build: ./s1
     image: ahsansabir30/s1:latest
     deploy:
@@ -16,6 +17,7 @@ services:
     environment:
     - DATABASE_URI=${DATABASE_URI}
   s2:
+    container_name: s2
     build: ./s2
     image: ahsansabir30/s2:latest
     deploy:
@@ -27,6 +29,7 @@ services:
     environment:
     - DATABASE_URI=${DATABASE_URI}
   s3:
+    container_name: s3
     build: ./s3
     image: ahsansabir30/s3:latest
     deploy:
@@ -38,6 +41,7 @@ services:
     environment:
     - DATABASE_URI=${DATABASE_URI}
   s4:
+    container_name: s1
     build: ./s4
     image: ahsansabir30/s4:latest
     deploy:
