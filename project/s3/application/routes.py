@@ -1,5 +1,6 @@
 from flask import Response
 from application import app
+from application.models import FootballStadiums
 import random
 
 @app.route('/get/stadiums', methods=['GET'])

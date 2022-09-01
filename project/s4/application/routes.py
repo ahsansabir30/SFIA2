@@ -1,5 +1,6 @@
 from flask import Response, request
 from application import app
+from application.models import FootballStadiums
 import json
 
 @app.route('/outcome', methods=['GET', 'POST'])
@@ -13,4 +14,5 @@ def outcome():
     else:
         outcome = str(False)
     return Response(outcome, mimetype='text/plain') 
+
 
