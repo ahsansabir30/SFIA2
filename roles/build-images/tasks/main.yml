@@ -2,3 +2,6 @@
 - name: "Build Docker Images"
   shell: | 
     cd app && cd project && docker-compose build 
+
+- name: "Push Images to Dockerhub"
+  shell: docker-compose push
