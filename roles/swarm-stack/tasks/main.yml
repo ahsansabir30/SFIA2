@@ -7,7 +7,7 @@
 
 - name: "Deploy stack using docker compose file"
   docker_stack:
-    state: absent
+    state: present
     name: mystack
     compose:
     - /home/jenkins/app/project/docker-compose.yaml
