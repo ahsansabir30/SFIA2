@@ -9,6 +9,8 @@ pipeline {
         stage('SHOW CREDENTIALS'){
             steps{
                 echo '${MYSQL_DATABASE}'
+                echo '${MYSQL_ROOT_PASSWORD}'
+                echo '${DATABASE_URI}'
             }
         }
         stage('Setup Jenkins VM'){
