@@ -5,7 +5,7 @@
 
 - name: "Push Images to Dockerhub"
   shell: |
-   docker push ahsansabir3/s1:latest
-   docker push ahsansabir3/s2:latest
-   docker push ahsansabir3/s3:latest
-   docker push ahsansabir3/s4:latest
+    docker push ahsansabir30/s1:latest
+    docker push ahsansabir30/s2:latest
+    docker push ahsansabir30/s3:latest
+    docker push ahsansabir30/s4:latest
