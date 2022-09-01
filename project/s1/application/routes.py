@@ -2,6 +2,10 @@ from application import app
 from flask import render_template
 import requests
 
+@app.route('/')
+def home():
+    return render_template('main.html')
+
 @app.route('/football', methods=['POST', 'GET'])
 def football():
     team = requests.get('http://s2:5001/get/teams').text
