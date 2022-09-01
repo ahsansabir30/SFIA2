@@ -2,7 +2,6 @@ version: "3.8"
 services:
   s1:
     build: ./s1
-    image: ahsansabir30/s1
     deploy:
       replicas: 4
     ports:
@@ -15,7 +14,6 @@ services:
     - "s4"
   s2:
     build: ./s2
-    image: ahsansabir30/s2
     deploy:
       replicas: 4
     ports:
@@ -24,7 +22,6 @@ services:
       protocol: tcp
   s3:
     build: ./s3
-    image: ahsansabir30/s3
     deploy:
       replicas: 4
     ports:
@@ -33,7 +30,6 @@ services:
       protocol: tcp
   s4:
     build: ./s4
-    image: ahsansabir30/s4
     deploy:
       replicas: 4
     ports:
