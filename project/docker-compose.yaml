@@ -13,6 +13,8 @@ services:
     - "s2"
     - "s3"
     - "s4"
+    environment:
+    - DATABASE_URI=${DATABASE_URI}
   s2:
     build: ./s2
     image: ahsansabir30/s2:latest
@@ -22,6 +24,8 @@ services:
     - target: 5001
       published: 5001
       protocol: tcp
+    environment:
+    - DATABASE_URI=${DATABASE_URI}
   s3:
     build: ./s3
     image: ahsansabir30/s3:latest
@@ -31,6 +35,8 @@ services:
     - target: 5002
       published: 5002
       protocol: tcp
+    environment:
+    - DATABASE_URI=${DATABASE_URI}
   s4:
     build: ./s4
     image: ahsansabir30/s4:latest
@@ -39,6 +45,8 @@ services:
     ports:
     - target: 5003
       published: 5003
+    environment:
+    - DATABASE_URI=${DATABASE_URI}
   nginx:
     image: nginx:latest
     volumes:
