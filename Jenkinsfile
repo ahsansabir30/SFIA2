@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    enviroment{
+    environment{
         MYSQL_DATABASE=credentials('MYSQL_DATABASE')
         MYSQL_ROOT_PASSWORD=credentials('MYSQL_ROOT_PASSWORD')
         DATABASE_URI=credentials('DATABASE_URI')
