@@ -1,8 +1,8 @@
 ---
 - name: "Build Docker Images"
-  shell:  docker-compose build docker-compose.yaml
-  args:
-    chdir: /app/project
+  shell: | 
+    cd app && cd project
+    docker-compose build docker-compose.yaml
 
 - name: "Push Docker Images"
   shell: |
