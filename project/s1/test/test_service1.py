@@ -8,6 +8,11 @@ class TestBase(TestCase):
         return app
 
 class TestResponseServiceOne(TestBase):
+    def test_home_page(self):
+        response = self.client.get(url_for('home'))
+        self.assert200(response)
+        self.assertIn(b'THE FOOTBALL GENERATOR', response.data)
+        
     def test_correct_team_stadium(self):
         with requests_mock.Mocker() as m:
             m.get('http://s2:5001/get/teams', text='Liverpool')
