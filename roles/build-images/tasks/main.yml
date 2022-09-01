@@ -1,7 +1,7 @@
 ---
 - name: "Build Docker Images"
   shell: | 
-    cd app && cd project && docker-compose build docker-compose.yaml
+    cd app && cd project && docker-compose build 
 
 - name: "Push Docker Images"
   shell: |
