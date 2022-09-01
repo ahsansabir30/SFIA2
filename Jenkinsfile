@@ -1,18 +1,6 @@
 pipeline {
     agent any
-    environment{
-        MYSQL_DATABASE=credentials('MYSQL_DATABASE')
-        MYSQL_ROOT_PASSWORD=credentials('MYSQL_ROOT_PASSWORD')
-        DATABASE_URI=credentials('DATABASE_URI')
-    }
     stages{
-        stage('SHOW CREDENTIALS'){
-            steps{
-                sh 'echo ${MYSQL_DATABASE}'
-                sh 'echo ${MYSQL_ROOT_PASSWORD}'
-                sh 'echo ${DATABASE_URI}'
-            }
-        }
         stage('Setup Jenkins VM'){
             steps{
                 sh 'sudo apt install python3 python3-pip python3-venv -y'
