@@ -1,0 +1,12 @@
+---
+- name: "Build Docker Images"
+  shell:  docker-compose build docker-compose.yaml
+  args:
+    chdir: /app/project
+
+- name: "Push Docker Images"
+  shell: |
+    docker push ahsansabir/s1 
+    docker push ahsansabir/s2
+    docker push ahsansabir/s3
+    docker push ahsansabir/s4
