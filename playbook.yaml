@@ -19,6 +19,7 @@
   become: true
   roles:
   - clone-repo
+  - build-images
   - swarm-stack
 
 - hosts: load_balancer
