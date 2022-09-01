@@ -5,7 +5,7 @@
 
 - name: "Push Docker Images"
   shell: |
-    docker push ahsansabir/s1 
-    docker push ahsansabir/s2
-    docker push ahsansabir/s3
-    docker push ahsansabir/s4
+    docker push ahsansabir/s1:latest 
+    docker push ahsansabir/s2:latest
+    docker push ahsansabir/s3:latest
+    docker push ahsansabir/s4:latest
