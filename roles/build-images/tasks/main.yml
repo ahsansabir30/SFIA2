@@ -2,10 +2,3 @@
 - name: "Build Docker Images"
   shell: | 
     cd app && cd project && docker-compose build 
-
-- name: "Push Docker Images"
-  shell: |
-    docker push ahsansabir/s1:latest 
-    docker push ahsansabir/s2:latest
-    docker push ahsansabir/s3:latest
-    docker push ahsansabir/s4:latest
