@@ -4,4 +4,4 @@ pymysql
 flask_testing
 pytest
 pytest-cov
-mock
+requests-mock
