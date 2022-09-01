@@ -4,9 +4,7 @@ import random
 
 @app.route('/get/teams', methods=['GET'])
 def getteams():
-    teams = [
-        'Liverpool', 'Chelsea', 'Manchester United', 'Manchester City', 'Tottenham', 'Arsenal'
-    ]
-
-    random_team = random.choice(teams)
+    count_teams = FootballStadiums.query.count() 
+    random_choice = random.randint(1, count_teams)
+    random_team = FootballStadiums.query.get(random_choice).team
     return Response(random_team, mimetype='text/plain') 
