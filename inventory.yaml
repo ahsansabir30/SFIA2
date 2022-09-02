@@ -17,7 +17,7 @@ all:
         ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
     load_balancer:
       hosts:
-        load-balancer:
+        nginx-load-balancer:
       vars:
         ansible_user: jenkins
         ansible_ssh_private_key_file: '~/.ssh/id_rsa'
