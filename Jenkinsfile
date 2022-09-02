@@ -3,7 +3,7 @@ pipeline {
      environment{
         DATABASE_URI=credentials('DATABASE_URI')
         MYSQL_ROOT_PASSWORD=credentials('MYSQL_ROOT_PASSWORD')
-        MYSQL_DATABASE:credentials('MYSQL_DATABASE')
+        MYSQL_DATABASE=credentials('MYSQL_DATABASE')
         USERNAME=credentials('USERNAME')
         PASSWORD=credentials('PASSWORD')
     }
