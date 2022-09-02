@@ -5,5 +5,6 @@
 
 - name: "Push Images to DockerHub"
   shell: | 
-    docker login --username foo --password-stdin < ~/my_password.txt 
+    sudo chmod +r ~/my_password.txt 
+    docker login --username "{{ lookup('env', 'username') }}" --password-stdin < ~/my_password.txt 
     cd app && cd project && docker-compose push
