@@ -1,15 +1,7 @@
 ---
 - name: "Build Docker Images"
   shell: | 
-    cd app && cd project && docker-compose build && docker login --username "{{ lookup('env', 'USERNAME') }}" --password "{{ lookup('env', 'PASSWORD') }}" && docker push ahsansabir/s1:latest
+    cd app && cd project && docker-compose build
 
-- name: "Log into DockerHub"
-  docker_login:
-    username: "{{ lookup('env', 'USERNAME') }}"
-    password: "{{ lookup('env', 'PASSWORD') }}" 
-
-- name: "Adding Tag to Docker Image"
-  command: docker tag ahsansabir/s1:latest docker.io/ahsansabir/s1:latest
-
-- name: "Push Image to Dockerhub"
-  command: docker push docker.io/ahsansabir/s1:latest
+- name: "Push Images to DockerHub"
+  command: docker login --username "{{ lookup('env', 'USERNAME') }}" --password "{{ lookup('env', 'PASSWORD') }}" && docker push ahsansabir/s1:latest
