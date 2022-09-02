@@ -49,5 +49,7 @@ services:
     - target: 80
       published: 80
       protocol: tcp
+    deploy:
+      replicas: 4
     depends_on:
     - "s1"
