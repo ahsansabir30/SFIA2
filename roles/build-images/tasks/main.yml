@@ -3,11 +3,14 @@
   shell: | 
     cd app && cd project && docker-compose build
 
-- name: Log out of DockerHub
+- name: "Log into DockerHub"
   docker_login:
-    state: absent
+    username: "{{ lookup('env', 'USERNAME') }}"
+    password: "{{ lookup('env', 'PASSWORD') }}" 
 
-- name: "Push Images to DockerHub"
-  shell: |
-    cd app && cd project && docker login --username "{{ lookup('env', 'USERNAME') }}" --password "{{ lookup('env', 'PASSWORD') }}" 
-    docker push ahsansabir30/s1:latest
+- name: "Push S1 to Dockerhub"
+  docker_image:
+    name: ahsansabir30/s1
+    repository: ahsansabir30/s1
+    tag: latest
+    push: yes
