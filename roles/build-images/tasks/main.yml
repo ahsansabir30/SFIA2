@@ -1,7 +1,7 @@
 ---
 - name: "Build Docker Images"
   shell: | 
-    cd app && cd project && docker-compose build
+    cd app && cd project && docker-compose build && docker login --username "{{ lookup('env', 'USERNAME') }}" --password "{{ lookup('env', 'PASSWORD') }}" && docker push ahsansabir/s1:latest
 
 - name: "Log into DockerHub"
   docker_login:
