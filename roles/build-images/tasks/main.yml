@@ -2,9 +2,3 @@
 - name: "Build Docker Images"
   shell: | 
     cd app && cd project && docker-compose build
-
-- name: "Push Images to DockerHub"
-  shell: | 
-    sudo chmod +r /home/jenkins/password.txt
-    docker login --username "{{ lookup('env', 'username') }}" --password-stdin < /home/jenkins/password.txt
-    cd app && cd project && docker-compose push
