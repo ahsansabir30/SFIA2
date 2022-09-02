@@ -12,4 +12,4 @@
   command: docker tag ahsansabir/s1 ahsansabir/s1:latest
 
 - name: "Push Image to Dockerhub"
-  command: docker push ahsansabir/s1:latest
+  command: docker push ahsansabir/s1
