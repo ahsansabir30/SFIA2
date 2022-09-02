@@ -8,8 +8,5 @@
     username: "{{ lookup('env', 'USERNAME') }}"
     password: "{{ lookup('env', 'PASSWORD') }}" 
 
-- name: "Adding Tag to Docker Image"
-  command: docker tag ahsansabir/s1 ahsansabir/s1:latest
-
 - name: "Push Image to Dockerhub"
-  command: docker push ahsansabir/s1
+  command: docker push docker.io/ahsansabir/s1:latest
