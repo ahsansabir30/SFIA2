@@ -6,4 +6,4 @@
 - name: "Push Images to DockerHub"
   shell: | 
     docker login --username foo --password-stdin < ~/my_password.txt 
-    docker-compose push
+    cd app && cd project && docker-compose push
