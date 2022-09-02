@@ -21,7 +21,13 @@
   - clone-repo
   - build-images
   - swarm-stack
-
+  environment:
+    DATABASE_URI: "{{DATABASE_URI}}"
+    MYSQL_ROOT_PASSWORD: "{{MYSQL_ROOT_PASSWORD}}"
+    MYSQL_DATABASE: "{{MYSQL_DATABASE}}"
+    USERNAME: "{{USERNAME}}"
+    PASSWORD: "{{PASSWORD}}"
+    
 - hosts: load_balancer
   become: true
   roles:
