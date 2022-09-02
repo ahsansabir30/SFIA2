@@ -3,6 +3,10 @@
   shell: | 
     cd app && cd project && docker-compose build
 
+- name: Log out of DockerHub
+  docker_login:
+    state: absent
+
 - name: "Log into DockerHub"
   docker_login:
     username: "{{ lookup('env', 'USERNAME') }}"
