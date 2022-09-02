@@ -15,6 +15,6 @@
 - name: "Push S1 to Dockerhub"
   docker_image:
     name: ahsansabir30/s1:latest
-    repository: docker.io:ahsansabir30/s1:latest
+    repository: ahsansabir30/s1:latest
     push: yes
     source: local
