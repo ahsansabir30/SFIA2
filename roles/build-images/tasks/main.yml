@@ -10,4 +10,4 @@
 
 - name: "Push Images to DockerHub"
   shell: |
-    cd app && cd project && docker-compose push
+    cd app && cd project && docker login -u="{{ lookup('env', 'USERNAME') }}" -p="{{ lookup('env', 'PASSWORD') }}" && docker-compose push
