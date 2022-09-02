@@ -3,11 +3,10 @@
   shell: | 
     cd app && cd project && docker-compose build
 
-- name: "Login into DockerHub"
+- name: Log out of DockerHub
   docker_login:
-    username: "{{ lookup('env', 'USERNAME') }}"
-    password: "{{ lookup('env', 'PASSWORD') }}"
+    state: absent
 
 - name: "Push Images to DockerHub"
   shell: |
-    cd app && cd project && docker login -u="{{ lookup('env', 'USERNAME') }}" -p="{{ lookup('env', 'PASSWORD') }}" && docker-compose push
+    cd app && cd project && docker login --username "{{ lookup('env', 'USERNAME') }}" --password-stdin < "{{ lookup('env', 'PASSWORD') }}"  && docker-compose push
