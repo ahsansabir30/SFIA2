@@ -7,7 +7,7 @@ import json
 def outcome():
     data = json.loads(request.data.decode('utf-8')) 
     team = data['team']
-    team_stadium = FootballStadiums.query.filter_by(team='Liverpool').first().stadium
+    team_stadium = FootballStadiums.query.filter_by(team=str(team)).first().stadium
 
     if team_stadium ==  data['stadium']:
         outcome = str(True)

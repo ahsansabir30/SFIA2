@@ -1,7 +1,7 @@
 from flask import url_for
 from flask_testing import TestCase
-import requests_mock
 from application import app
+import requests_mock
 
 class TestBase(TestCase):
     def create_app(self):
@@ -12,7 +12,7 @@ class TestResponseServiceOne(TestBase):
         response = self.client.get(url_for('home'))
         self.assert200(response)
         self.assertIn(b'THE FOOTBALL GENERATOR', response.data)
-        
+
     def test_correct_team_stadium(self):
         with requests_mock.Mocker() as m:
             m.get('http://s2:5001/get/teams', text='Liverpool')

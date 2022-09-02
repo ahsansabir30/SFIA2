@@ -5,12 +5,4 @@
     password: "{{PASSWORD}}"
 
 - name: "Push Images to Docker"
-  docker_image:
-    name: ahsansabir30/s1:latest
-    repository: ahsansabir30/s1:latest
-    push: true
-    source: local
-
-- name: "Push Images to Docker"
   shell: cd app && cd project && docker-compose push
-
