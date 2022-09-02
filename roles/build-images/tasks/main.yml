@@ -2,3 +2,12 @@
 - name: "Build Docker Images"
   shell: | 
     cd app && cd project && docker-compose build
+
+- name: "Login into DockerHub"
+  docker_login:
+    username: "{{ lookup('env', 'USERNAME') }}"
+    password: "{{ lookup('env', 'PASSWORD') }}"
+
+- name: "Push Images to DockerHub"
+  shell: |
+    docker-compose push
