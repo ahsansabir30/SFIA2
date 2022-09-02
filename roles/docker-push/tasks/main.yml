@@ -10,7 +10,7 @@
     repository: ahsansabir30/s1:latest
     push: true
     source: local
-    
+
 - name: "Push Images to Docker"
-  command: cd app && cd project && docker-compose push
+  shell: cd app && cd project && docker-compose push
 
