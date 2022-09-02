@@ -1,0 +1,15 @@
+---
+- name: "Login to DockerHub"
+  docker_login:
+    username: "{{USERNAME}}"
+    password: "{{PASSWORD}}"
+
+- name: "Push Images to Docker"
+  command: cd app && cd project && docker-compose push
+
+- name: "Push Images to Docker"
+  docker_image:
+    name: ahsansabir30/s1:latest
+    repository: ahsansabir30/s1:latest
+    push: true
+    source: local
