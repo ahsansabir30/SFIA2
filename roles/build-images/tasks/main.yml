@@ -1,4 +1,4 @@
 ---
 - name: "Build Docker Images"
   shell: | 
-    cd app && cd project && docker-compose build 
+    cd app && cd project && docker-compose build
