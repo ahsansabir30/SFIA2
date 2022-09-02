@@ -24,6 +24,8 @@ services:
     - target: 5001
       published: 5001
       protocol: tcp
+    depends_on:
+    - "mysql"
     environment:
     - DATABASE_URI=${DATABASE_URI}
   s3:
@@ -35,6 +37,8 @@ services:
     - target: 5002
       published: 5002
       protocol: tcp
+    depends_on:
+    - "mysql"
     environment:
     - DATABASE_URI=${DATABASE_URI}
   s4:
@@ -45,6 +49,8 @@ services:
     ports:
     - target: 5003
       published: 5003
+    depends_on:
+    - "mysql"
     environment:
     - DATABASE_URI=${DATABASE_URI}
   nginx:

@@ -15,8 +15,6 @@ pipeline {
         stage('Docker Swarm and NGINX Load Balancer'){
             steps{
                 sh 'ansible-playbook -i inventory.yaml playbook.yaml'
-                sh 'sudo chmod +x ./create-table.sh'
-                sh './create-table.sh -c'
             }
         }
     }
