@@ -10,4 +10,4 @@
 
 - name: "Push Images to DockerHub"
   shell: |
-    docker-compose push
+    cd app && cd project && docker-compose push
