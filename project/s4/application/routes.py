@@ -19,7 +19,7 @@ def outcome():
         'VfL Wolfsburg': 'Volkswagen Arena', 
         'Leverkusen': 'BayArena', 
         'Eintracht Frankfurt': 'Deutsche Bank Park', 
-        'Borussia Mönchengladbach': 'BORUSSIA-PARK
+        'Borussia Mönchengladbach': 'BORUSSIA-PARK'
     }
 
     data = json.loads(request.data.decode('utf-8')) 
