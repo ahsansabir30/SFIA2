@@ -12,5 +12,9 @@
     compose:
     - /home/jenkins/app/project/docker-compose.yaml
 
-- name: "Remove any unwanted docker images"
-  command: docker image prune -a
+- name: Prune everything
+  docker_prune:
+    containers: true
+    images: true
+    networks: true
+    builder_cache: true
