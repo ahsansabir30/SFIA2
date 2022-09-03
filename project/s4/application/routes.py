@@ -12,7 +12,16 @@ def outcome():
         'Tottenham':'Tottenham Hotspur', 
         'Arsenal':'Emirates'
     }
-    
+
+    teams = {
+        'Bayern Munich': 'Allianz Arena', 
+        'Borussia Dortmund': 'Signal Iduna Park', 
+        'VfL Wolfsburg': 'Volkswagen Arena', 
+        'Leverkusen': 'BayArena', 
+        'Eintracht Frankfurt': 'Deutsche Bank Park', 
+        'Borussia Mönchengladbach': 'BORUSSIA-PARK
+    }
+
     data = json.loads(request.data.decode('utf-8')) 
     
     if teams.get(data['team']) ==  data['stadium']:
