@@ -12,9 +12,9 @@
     compose:
     - /home/jenkins/app/project/docker-compose.yaml
 
-- name: Prune everything
-  docker_prune:
-    containers: true
-    images: true
-    networks: true
-    builder_cache: true
+#- name: Prune everything
+#  docker_prune:
+#    containers: true
+#    images: true
+#    networks: true
+#    builder_cache: true
