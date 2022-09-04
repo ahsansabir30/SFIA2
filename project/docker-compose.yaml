@@ -62,7 +62,7 @@ services:
       source: db_volume
       target: /var/lib/mysql
     deploy:
-      replicas: 2
+      replicas: 1
     environment:
     - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     - MYSQL_DATABASE=${MYSQL_DATABASE}
