@@ -47,3 +47,4 @@ class TestResponseServiceOne(TestBase):
             response = self.client.get(url_for('football'))
             self.assertIn(b'YOU MISSED', response.data)
             assert scored.query.filter_by(score='miss').first() is not None
+            

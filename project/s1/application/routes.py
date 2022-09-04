@@ -29,3 +29,4 @@ def football():
     total = scored.query.count()
 
     return render_template('generator.html', team=team, stadium=stadium, outcome=outcome, tally=tally, total=total)
+    

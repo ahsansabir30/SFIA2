@@ -131,3 +131,6 @@ dmypy.json
 # Ignore install scripts
 .sh 
 docker-compose-install.sh
+
+# Ignore db
+.db
