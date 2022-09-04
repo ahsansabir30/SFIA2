@@ -14,7 +14,7 @@ services:
     - "s3"
     - "s4"
     environment:
-    - DATABASE_URI=mysql+pymysql://root:password@mysql:3306/db
+    - DATABASE_URI=${DATABASE_URI}
   s2:
     build: ./s2
     image: ahsansabir30/s2:latest
@@ -62,7 +62,7 @@ services:
       source: db_volume
       target: /var/lib/mysql
     environment:
-    - MYSQL_ROOT_PASSWORD=password
-    - MYSQL_DATABASE=db
+    - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    - MYSQL_DATABASE=${MYSQL_DATABASE}
 volumes:
   db_volume:
