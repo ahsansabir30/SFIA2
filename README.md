@@ -10,11 +10,12 @@ Service 2/3, will both generate random objects (and return these objects to serv
 Service 4, will generate an object using a set of predefined rules (i.e. is determined by the values generated in service three and four) and thus a post request.
 
 This architecture can be seen in the image below:
-
+![service architecture](https://user-images.githubusercontent.com/92265482/188309708-8d5fdcdb-8879-4172-b4bc-390785963eba.JPG)
 
 ## Overview
 The project that I chose to create was a random football generator - whereby the end user can click on a button and will either score or miss. This outcome will be mainly dependent on the outcomes from service 2 & 3, such that the user only scores if the football team and stadium generated from these service 2 & 3 match (this is determined by service 4). 
 To start this project, I first designed the infastructure that I will be running to make this project a success and gave me an idea, on how each service would interact with each other. 
+![service architecture main](https://user-images.githubusercontent.com/92265482/188309714-c2d9a784-0781-4354-b006-392415b8910e.JPG)
 
 However due to the time restraint I was unable to add in user login functionality - whereby an individual user is able to login and track the amount of goals he/she has scored. Furthermore, to make the application more rewarding to the end user - I could have implemented a prize system (and thus could possibly mean an additional service being created, that could possibly interact with service 4 directly and generate random prizes)
 
@@ -22,6 +23,7 @@ However due to the time restraint I was unable to add in user login functionalit
 Once the overall design was created for the application, it was extremely important for me to attach some of the risk attached to building and running the application and each service. This is extremly important in order to mitigate and reduce risk involved with producing and running an application.
 
 The inital assessment can be seen below (the measures that have been implemented within the development of the application can be seen in green):
+![Risk Assessment](https://user-images.githubusercontent.com/92265482/188309724-831e5ddd-61b8-4551-b5ef-08216b953319.JPG)
 
 ## Architecture
 The technology used to create these services, are as follow:
@@ -39,8 +41,8 @@ The technology used to create these services, are as follow:
 To track the project I used Trello, and used a Kanban Board setup (which enforces the use of agile methodology). The project was broken down to different task and each tasks was assigned story points, taking into account MoSCoW prioritisation (i.e. the most important task are done first, and thus are assigned the highest story point). At first all task were kept within the product backlog and each task within the product backlog was in the order, dependent on the story points assigned earlier. Then task would be moved into the sprint backlog (which either could be many task or one, depending on the user story point) and then on to review (where it would need to pass an intial test done by me on the application). 
 
 From the images below you can see my Trello Kanban Board:
-
-
+![Kanban Board](https://user-images.githubusercontent.com/92265482/188309731-1743effa-5362-425d-a933-2340c65323a9.JPG)
+![Kanban Board2](https://user-images.githubusercontent.com/92265482/188309733-458893b1-dfab-4fbe-818a-f09e7e008542.JPG)
 
 The version control system used on this project was Git and was held in a repository on Github. The development of the application and each service was done on multiple branches, which thus gave me an isolated enviroment to work on the project (without disturbing the main code base). 
 
@@ -52,25 +54,30 @@ However, for us to containerise and deploy our application we have to configure 
 In order to activate this automation, any push event within the develop branch - would activate the automated CI/CD pipeline (done through the user of a webhook).
 
 Overall the architecture can be seen below:
-
-
+![architecture](https://user-images.githubusercontent.com/92265482/188309737-adfcb1a5-0c4e-45cc-bf6a-3be9a27a593c.JPG)
 
 ## Testing
 The testing phase of the application was built into the CI pipeline, whereby the test were mainly focused around if each service was producing the right outcome (i.e. the random generated objects). Any push event on the develop branch on github would activate a Jenkins build and thus consequently a test was done on the new build - if the test fails, the existing build of the application would remain (and thus the affects of an app not working would not be passed to the end user). From below, we can see the outcome of our test.
 
 ### Service 1
+![test1](https://user-images.githubusercontent.com/92265482/188309742-6e3ef7bf-f8ec-4d03-a6ce-a340d45a97aa.JPG)
 
 ### Service 2
+![test2](https://user-images.githubusercontent.com/92265482/188309745-cd1fced3-80ea-430c-83a8-57c08f3d2e8e.JPG)
 
 ### Service 3
+![test3](https://user-images.githubusercontent.com/92265482/188309747-5dcc2b95-a8cc-4465-94f0-3a5aae843112.JPG)
 
 ### Service 4
-
+![test4](https://user-images.githubusercontent.com/92265482/188309748-c954510d-5178-4cf4-b62b-92578865a386.JPG)
 
 ## Application
 When the application is opened up we are greeted with a quick message, which tells the end user the purpose of the application and what to do. To run the application we click on the button 'spin' - this would send a get request to service 2 & 3 and that outcome is then sent to service 4, using a post request, this should return if the user scored or not.
+![application1](https://user-images.githubusercontent.com/92265482/188309765-40cef23d-8d78-4a68-900f-3b3b72da7fb4.JPG)
 
 Once the button was clicked, a new page is displayed - which would indicate if the user has scored or missed.
+![application2](https://user-images.githubusercontent.com/92265482/188309828-c51c1e34-b1b6-4320-a279-c5fb30ec639b.JPG)
+![application3](https://user-images.githubusercontent.com/92265482/188309952-aedbf316-c5c7-4d60-95ca-ea70f27b6d07.JPG)
 
 ## Future
 In the future for the application - I would love to implement a score system, which is able to take in a user login and would track the amount of goals scored and missed by the end user. This would make it more rewarding to the end user, further to this, the implementation of a reward system would be extremely critical in making the application more useful to the end user and give it a better purpose.
