@@ -1,5 +1,16 @@
 version: "3.8"
 services:
+  mysql:
+    image: mysql:latest
+    volumes: 
+    - type: volume
+      source: db_volume
+      target: /var/lib/mysql
+    deploy:
+      replicas: 1
+    environment:
+    - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    - MYSQL_DATABASE=${MYSQL_DATABASE}
   s1:
     build: ./s1
     image: ahsansabir30/s1:latest
@@ -10,6 +21,7 @@ services:
       published: 5000
       protocol: tcp
     depends_on:
+    - "mysql"
     - "s2"
     - "s3"
     - "s4"
@@ -55,16 +67,5 @@ services:
       replicas: 3
     depends_on:
     - "s1"
-  mysql:
-    image: mysql:latest
-    volumes: 
-    - type: volume
-      source: db_volume
-      target: /var/lib/mysql
-    deploy:
-      replicas: 1
-    environment:
-    - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-    - MYSQL_DATABASE=${MYSQL_DATABASE}
 volumes:
   db_volume:

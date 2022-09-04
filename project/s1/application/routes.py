@@ -19,11 +19,12 @@ def football():
     
     if str(outcome) == 'True':
         score = scored(score='score')
+        db.session.add(score)
+        db.session.commit()
     else:
         score = scored(score='miss')
-
-    db.session.add(score)
-    db.session.commit()
+        db.session.add(score)
+        db.session.commit()
 
     tally = scored.query.filter_by(score='score').count()
     total = scored.query.count()
