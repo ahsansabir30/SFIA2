@@ -22,7 +22,7 @@ However due to the time restraint I was unable to add in user login functionalit
 ## Risk Assessment
 Once the overall design was created for the application, it was extremely important for me to attach some of the risk attached to building and running the application and each service. This is extremly important in order to mitigate and reduce risk involved with producing and running an application.
 
-The inital assessment can be seen below (the measures that have been implemented within the development of the application can be seen in green):
+The inital assessment can be seen below (the measures that have been implemented within the development of the application can be seen in green): View [here](https://docs.google.com/spreadsheets/d/1h132QwIUsltAlFLAaUypBXFwJTbeU6p6Sr3IcrJ7iKw/edit?usp=sharing)
 ![Risk Assessment](https://user-images.githubusercontent.com/92265482/188309724-831e5ddd-61b8-4551-b5ef-08216b953319.JPG)
 
 ## Architecture
@@ -40,7 +40,7 @@ The technology used to create these services, are as follow:
 
 To track the project I used Trello, and used a Kanban Board setup (which enforces the use of agile methodology). The project was broken down to different task and each tasks was assigned story points, taking into account MoSCoW prioritisation (i.e. the most important task are done first, and thus are assigned the highest story point). At first all task were kept within the product backlog and each task within the product backlog was in the order, dependent on the story points assigned earlier. Then task would be moved into the sprint backlog (which either could be many task or one, depending on the user story point) and then on to review (where it would need to pass an intial test done by me on the application). 
 
-From the images below you can see my Trello Kanban Board:
+From the images below you can see my [Trello Kanban Board](https://trello.com/invite/b/fADuh8oZ/b47a2061a6cb61fc347140be478a845f/service-project):
 ![Kanban Board](https://user-images.githubusercontent.com/92265482/188309731-1743effa-5362-425d-a933-2340c65323a9.JPG)
 ![Kanban Board2](https://user-images.githubusercontent.com/92265482/188309733-458893b1-dfab-4fbe-818a-f09e7e008542.JPG)
 
