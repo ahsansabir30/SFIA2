@@ -1,6 +1,7 @@
-from application import app
+from application import app, db
 from flask import render_template
 import requests
+from application.models import scored
 
 @app.route('/')
 def home():
@@ -15,4 +16,16 @@ def football():
         'stadium': stadium
     }
     outcome = requests.post('http://s4:5003/outcome', json=response).text
-    return render_template('generator.html', team=team, stadium=stadium, outcome=outcome)
+    
+    if str(outcome) == 'True':
+        score = scored(score='score')
+    else:
+        score = scored(score='miss')
+
+    db.session.add(score)
+    db.session.commit()
+
+    tally = scored.query.filter_by(score='score').count()
+    total = scored.query.count()
+
+    return render_template('generator.html', team=team, stadium=stadium, outcome=outcome, tally=tally, total=total)

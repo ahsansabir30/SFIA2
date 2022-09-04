@@ -13,6 +13,8 @@ services:
     - "s2"
     - "s3"
     - "s4"
+    environment:
+    - DATABASE_URI=mysql+pymysql://root:password@mysql:3306/db
   s2:
     build: ./s2
     image: ahsansabir30/s2:latest
@@ -53,3 +55,14 @@ services:
       replicas: 2
     depends_on:
     - "s1"
+  mysql:
+    image: mysql:latest
+    volumes: 
+    - type: volume
+      source: db_volume
+      target: /var/lib/mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=db
+volumes:
+  db_volume:

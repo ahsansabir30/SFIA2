@@ -1,11 +1,26 @@
 from flask import url_for
 from flask_testing import TestCase
 import requests_mock
-from application import app
+from application import app, db
+from application.models import scored
 
 class TestBase(TestCase):
     def create_app(self):
+        app.config.update(
+            SQLALCHEMY_DATABASE_URI='sqlite:///test.db',
+            DEBUG=True,
+            WTF_CSRF_ENABLED=False,
+            SECRET_KEY = 'NADSKJADSNJDA54DSAJKNDAJ4'
+        )
         return app
+        
+    def setUp(self):
+        db.create_all()
+        db.session.commit()
+
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
 
 class TestResponseServiceOne(TestBase):
     def test_home_page(self):
@@ -21,6 +36,7 @@ class TestResponseServiceOne(TestBase):
             
             response = self.client.get(url_for('football'))
             self.assertIn(b'YOU SCORED', response.data)
+            assert scored.query.filter_by(score='score').first() is not None
 
     def test_incorrect_team_stadium(self):
         with requests_mock.Mocker() as m:
@@ -30,3 +46,4 @@ class TestResponseServiceOne(TestBase):
 
             response = self.client.get(url_for('football'))
             self.assertIn(b'YOU MISSED', response.data)
+            assert scored.query.filter_by(score='miss').first() is not None
