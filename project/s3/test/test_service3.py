@@ -11,5 +11,5 @@ class TestResponseService3(TestBase):
     def test_page_response(self):
         response = self.client.get(url_for('getstadium'))
         self.assert200(response)
-        # assert response.data.decode('utf-8') in ['Anfield', 'Stamford Bridge', 'Old Trafford', 'Etihad', 'Tottenham Hotspur', 'Emirates']
-        assert response.data.decode('utf-8') in ['Allianz Arena', 'Signal Iduna Park', 'Volkswagen Arena', 'BayArena', 'Deutsche Bank Park', 'BORUSSIA-PARK']
+        assert response.data.decode('utf-8') in ['Anfield', 'Stamford Bridge', 'Old Trafford', 'Etihad', 'Tottenham Hotspur', 'Emirates']
+        
