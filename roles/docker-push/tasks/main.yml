@@ -4,5 +4,11 @@
     username: "{{USERNAME}}"
     password: "{{PASSWORD}}"
 
+- name: Tag and push to docker hub
+  docker_image:
+    name: ahsansabir30/s1:latest
+    repository: ahsansabir30/s1:latest
+    push: yes
+
 - name: "Push Images to Docker"
   shell: cd app && cd project && docker-compose push
