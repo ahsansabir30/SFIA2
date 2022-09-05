@@ -13,7 +13,7 @@ services:
     build: ./s1
     image: ahsansabir30/s1:latest
     deploy:
-      replicas: 2
+      replicas: 1
     ports:
     - target: 5000
       published: 5000
@@ -29,7 +29,7 @@ services:
     build: ./s2
     image: ahsansabir30/s2:latest
     deploy:
-      replicas: 2
+      replicas: 1
     ports:
     - target: 5001
       published: 5001
@@ -38,7 +38,7 @@ services:
     build: ./s3
     image: ahsansabir30/s3:latest
     deploy:
-      replicas: 2
+      replicas: 1
     ports:
     - target: 5002
       published: 5002
@@ -47,7 +47,7 @@ services:
     build: ./s4
     image: ahsansabir30/s4:latest
     deploy:
-      replicas: 2
+      replicas: 1
     ports:
     - target: 5003
       published: 5003
@@ -62,7 +62,7 @@ services:
       published: 80
       protocol: tcp
     deploy:
-      replicas: 2
+      replicas: 1
     depends_on:
     - "s1"
 volumes:
