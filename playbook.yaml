@@ -33,8 +33,3 @@
   become: true
   roles:
   - load-balancer
-
-- hosts: manager_group worker_group
-  become: true
-  roles:
-  - clean-docker
