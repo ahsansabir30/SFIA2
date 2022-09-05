@@ -79,9 +79,9 @@ When the application is opened up we are greeted with a quick message, which tel
 ![application1](https://user-images.githubusercontent.com/92265482/188309765-40cef23d-8d78-4a68-900f-3b3b72da7fb4.JPG)
  
 Once the button is clicked, a new page is displayed - which would indicate if the user has scored or missed.
-![application2](https://user-images.githubusercontent.com/92265482/188309828-c51c1e34-b1b6-4320-a279-c5fb30ec639b.JPG)
-![application3](https://user-images.githubusercontent.com/92265482/188309952-aedbf316-c5c7-4d60-95ca-ea70f27b6d07.JPG)
- 
+![application2](https://user-images.githubusercontent.com/92265482/188470288-3aec4cde-de7f-48e2-9d5f-792fa540619e.JPG)
+![application3](https://user-images.githubusercontent.com/92265482/188470293-25996330-49f4-43bb-8cb2-b6a9a4ffae27.JPG)
+
 ## Future
 In the future for the application - I would love to implement a score system, which is able to take in a user login and would track the amount of goals scored and missed by the end user. This would make it more rewarding to the end user. Further to this, the implementation of a reward system would be extremely critical in making the application more useful to the end user and give it a better purpose.
  
