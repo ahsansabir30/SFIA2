@@ -10,6 +10,11 @@
   roles:
   - swarm-init
 
+- hosts: worker_group
+  become: true
+  roles:
+  - swarm-join
+
 - hosts: manager_group
   become: true
   roles:
