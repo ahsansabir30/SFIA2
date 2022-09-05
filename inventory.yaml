@@ -11,11 +11,6 @@ all:
     worker_group:
       hosts:
         worker:
-      vars:
-        ansible_user: jenkins
-        ansible_ssh_private_key_file: '~/.ssh/id_rsa'
-        ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
-      hosts:
         worker-2:
       vars:
         ansible_user: jenkins
