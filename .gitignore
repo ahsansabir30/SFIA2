@@ -133,4 +133,4 @@ dmypy.json
 docker-compose-install.sh
 
 # Ignore db
-.db
+test.db
