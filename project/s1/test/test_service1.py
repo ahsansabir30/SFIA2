@@ -30,8 +30,8 @@ class TestResponseServiceOne(TestBase):
         
     def test_correct_team_stadium(self):
         with requests_mock.Mocker() as m:
-            m.get('http://s2:5001/get/teams', text='Liverpool')
-            m.get('http://s3:5002/get/stadiums', text='Anfield')
+            m.get('http://s2:5001/get/teams', text='Bayern Munich')
+            m.get('http://s3:5002/get/stadiums', text='Allianz Arena')
             m.post('http://s4:5003/outcome', text='True')
             
             response = self.client.get(url_for('football'))
@@ -40,8 +40,8 @@ class TestResponseServiceOne(TestBase):
 
     def test_incorrect_team_stadium(self):
         with requests_mock.Mocker() as m:
-            m.get('http://s2:5001/get/teams', text='Arsenal')
-            m.get('http://s3:5002/get/stadiums', text='Old Trafford')
+            m.get('http://s2:5001/get/teams', text='VfL Wolfsburg')
+            m.get('http://s3:5002/get/stadiums', text='Allianz Arena')
             m.post('http://s4:5003/outcome', text='False')
 
             response = self.client.get(url_for('football'))
