@@ -10,12 +10,10 @@ class TestBase(TestCase):
 
 class TestResponseService4(TestBase):
     def test_correct_stadium_team(self):
-        #response = self.client.post(url_for('outcome'), json={'team':'Liverpool', 'stadium':'Anfield'})
-        response = self.client.post(url_for('outcome'), json={'team':'Bayern Munich', 'stadium':'Allianz Arena'})
+        response = self.client.post(url_for('outcome'), json={'team':'Liverpool', 'stadium':'Anfield'})
         self.assertIn(b'True', response.data)
 
     def test_incorrect_stadium_team(self):
-        #response = self.client.post(url_for('outcome'), json={'team':'', 'stadium':'Old Trafford'})
-        response = self.client.post(url_for('outcome'), json={'team':'Bayern Munich', 'stadium':'Old Trafford'})
+        response = self.client.post(url_for('outcome'), json={'team':'', 'stadium':'Old Trafford'})
         self.assertIn(b'False', response.data)
     

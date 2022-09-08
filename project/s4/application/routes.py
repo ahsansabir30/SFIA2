@@ -4,21 +4,13 @@ import json
 
 @app.route('/outcome', methods=['GET', 'POST'])
 def outcome():
-    #teams = {
-     #   'Liverpool':'Anfield', 
-     #   'Chelsea':'Stamford Bridge', 
-      #  'Manchester United':'Old Trafford', 
-       # 'Manchester City':'Etihad', 
-       # 'Tottenham':'Tottenham Hotspur', 
-        #'Arsenal':'Emirates'
-    #}
     teams = {
-        'Bayern Munich': 'Allianz Arena', 
-        'Borussia Dortmund': 'Signal Iduna Park', 
-        'VfL Wolfsburg': 'Volkswagen Arena', 
-        'Leverkusen': 'BayArena', 
-        'Eintracht Frankfurt': 'Deutsche Bank Park', 
-        'Borussia Mönchengladbach': 'BORUSSIA-PARK'
+        'Liverpool':'Anfield', 
+        'Chelsea':'Stamford Bridge', 
+        'Manchester United':'Old Trafford', 
+        'Manchester City':'Etihad', 
+        'Tottenham':'Tottenham Hotspur', 
+        'Arsenal':'Emirates'
     }
     data = json.loads(request.data.decode('utf-8')) 
     
