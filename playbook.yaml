@@ -8,6 +8,7 @@
 - hosts: manager_group
   become: true
   roles:
+  - docker-compose-install
   - swarm-init
 
 - hosts: worker_group
