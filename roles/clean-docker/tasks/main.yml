@@ -1,0 +1,7 @@
+---
+- name: "Remove all unnecessary images or containers that have been stopped"
+  docker_prune:
+    containers: true
+    images: true
+    networks: true
+    builder_cache: true

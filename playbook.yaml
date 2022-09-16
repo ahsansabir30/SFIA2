@@ -1,0 +1,41 @@
+---
+- hosts: manager_group worker_group
+  become: true
+  roles:
+  - initial-setup
+  - docker-install
+
+- hosts: manager_group
+  become: true
+  roles:
+  - docker-compose
+  - swarm-init
+
+- hosts: worker_group
+  become: true
+  roles:
+  - swarm-join
+
+- hosts: manager_group
+  become: true
+  roles:
+  - clone-repo
+  - build-images
+  - docker-push
+  - swarm-stack
+  environment:
+    DATABASE_URI: "{{DATABASE_URI}}"
+    MYSQL_ROOT_PASSWORD: "{{MYSQL_ROOT_PASSWORD}}"
+    MYSQL_DATABASE: "{{MYSQL_DATABASE}}"
+    USERNAME: "{{USERNAME}}"
+    PASSWORD: "{{PASSWORD}}"
+
+- hosts: load_balancer
+  become: true
+  roles:
+  - load-balancer
+
+- hosts: manager_group worker_group
+  become: true
+  roles:
+  - clean-docker

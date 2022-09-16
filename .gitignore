@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignore install scripts
+.sh 
+docker-compose-install.sh
+
+# Ignore db
+test.db

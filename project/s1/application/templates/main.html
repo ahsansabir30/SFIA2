@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="p-5">
+    <h1 class="p-3">THE FOOTBALL GENERATOR</h1>        
+    <h3 class="p-1">CAN YOUR LUCK MATCH THE TEAM TO ITS STADIUM?</h3>
+    <h5 class="p-1">FIND OUT BY CLICKING ON THE BUTTON BELOW AND SEE IF YOU CAN SCORE!</h5>
+</div>
+<div class="pt-10">
+    <a href="{{url_for('football')}}"><button type="button" class="btn btn-danger btn-circle btn-xl fs-1">SPIN</button></a>
+</div>
+{% endblock %}

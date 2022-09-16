@@ -1,0 +1,13 @@
+---
+- name: "Install packages for stack deployment"
+  pip:
+    name:
+    - jsondiff
+    - pyyaml
+
+- name: "Deploy stack using docker compose file"
+  docker_stack:
+    state: present
+    name: mystack
+    compose:
+    - /home/jenkins/app/project/docker-compose.yaml

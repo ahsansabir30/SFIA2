@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if outcome == 'True' %}
+<div class="p-5 text-uppercase">
+    <h1 class="p-3">YOU SCORED</h1>
+    <h2>Team: {{team}}</h2>
+    <h2>Stadium: {{stadium}}</h2>
+    <h2>Scored: {{tally}}</h2>
+    <h2 style="color: red;">Total Shots: {{total}}</h2>
+</div>
+<div class="pt-10">
+    <a href="{{url_for('football')}}"><button type="button" class="btn btn-danger btn-circle btn-xl fs-1">SPIN AGAIN</button></a>
+</div>
+{% else %}
+<div class="p-5 text-uppercase">
+    <h1 class="p-3">YOU MISSED</h1>
+    <h2>Team: {{team}}</h2>
+    <h2>Stadium: {{stadium}}</h2>
+    <h2>Scored: {{tally}}</h2>
+    <h2>Total Shots: {{total}}</h2>
+</div>
+<div class="pt-10">
+    <a href="{{url_for('football')}}"><button type="button" class="btn btn-danger btn-circle btn-xl fs-1">SPIN AGAIN</button></a>
+</div>
+{% endif %}
+{% endblock %}

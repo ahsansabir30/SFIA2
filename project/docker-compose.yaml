@@ -1,0 +1,69 @@
+version: "3.8"
+services:
+  mysql:
+    image: mysql:latest
+    volumes: 
+    - type: volume
+      source: db_volume
+      target: /var/lib/mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    - MYSQL_DATABASE=${MYSQL_DATABASE}
+  s1:
+    build: ./s1
+    image: ahsansabir30/s1:latest
+    deploy:
+      replicas: 3
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+    depends_on:
+    - "mysql"
+    - "s2"
+    - "s3"
+    - "s4"
+    environment:
+    - DATABASE_URI=${DATABASE_URI}
+  s2:
+    build: ./s2
+    image: ahsansabir30/s2:latest
+    deploy:
+      replicas: 3
+    ports:
+    - target: 5001
+      published: 5001
+      protocol: tcp
+  s3:
+    build: ./s3
+    image: ahsansabir30/s3:latest
+    deploy:
+      replicas: 3
+    ports:
+    - target: 5002
+      published: 5002
+      protocol: tcp
+  s4:
+    build: ./s4
+    image: ahsansabir30/s4:latest
+    deploy:
+      replicas: 3
+    ports:
+    - target: 5003
+      published: 5003
+  nginx:
+    image: nginx:latest
+    volumes:
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    deploy:
+      replicas: 3
+    depends_on:
+    - "s1"
+volumes:
+  db_volume:
